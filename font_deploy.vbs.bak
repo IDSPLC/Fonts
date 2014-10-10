@@ -1,8 +1,7 @@
 ' Install multiple Fonts in Windows XP/Vista/7
-'This will deploy custom company fonts. To properly track changes, this script needs write access to the
-'following Registry Key: HKLM\Software\IDSPLC\Fonts\
-'This registry key tracks the version installed against the version contained in the script. Increasing the Installed version here
-'will cause the script to push out any new fonts, but skip the process if they are the same. This saves time as the script will not have to compare each font to those already installed.
+'This will deploy custom company fonts. To properly track changes, this script needs write access to the following Registry Key: HKLM\Software\IDSPLC\Fonts\
+'This registry key tracks the version installed against the version contained in the script. Increasing the Installed version here will cause the script to push out any new fonts, but skip the process if they are the same. This saves time as the script will not have to compare each font to those already installed.
+
 
 Dim Installed, InstallCheck, RegKey, RegType, RegRun, temp
 DIM strFontSourcePath, strComputerName
@@ -12,6 +11,8 @@ RegRun = 0
 
 RegKey = "HKLM\Software\IDSPLC\Fonts\Installed"
 RegType = "REG_DWORD"
+
+'strFontSourcePath = "\\US-SVR-NET-001\IDS Inc Shared\IT\Fonts\deploy\"				'Location of fonts to install 
 
 'Debugging Options
 on error resume next		'allows script to continue in the event of an error
